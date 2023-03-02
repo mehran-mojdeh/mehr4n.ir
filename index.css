@@ -1,0 +1,138 @@
+@keyframes "blink" {
+  from, to {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+@-moz-keyframes blink {
+  from, to {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes "blink" {
+  from, to {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+@-ms-keyframes "blink" {
+  from, to {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+@-o-keyframes "blink" {
+  from, to {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: Courier, sans-serif, Tahoma;
+  font-size: 21px;
+  font-weight: 300;
+}
+
+:root * {
+  box-sizing: border-box;
+  margin: 0;
+  transition: all ease-in-out 1s;
+}
+
+body {
+  background-color: #222232;
+  color: #b0c4de;
+  position: relative;
+}
+
+#main {
+  height: 100vh;
+  padding: 200px 10% 100px 10%;
+}
+
+#wellcoming {
+  font-family: Courier, monospace;
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding-bottom: 80px;
+  --cursorOpacity : 0;
+}
+#wellcoming::after{
+  display: inline-block;
+  background-color: #b0c4de;
+  content: '';
+  opacity: 1;
+  width: 1ch;
+  height: 1em;
+  margin-bottom: -.2em;
+  margin-left: .1em;
+  -webkit-animation: .5s blink step-end infinite;
+  -moz-animation: .5s blink step-end infinite;
+  -ms-animation: .5s blink step-end infinite;
+  -o-animation: .5s blink step-end infinite;
+  animation: .5s blink step-end infinite;
+}
+
+#nav {
+  opacity: 0;
+  transition:all ease-out .7s;
+}
+#nav ul {
+  display: inline-block;
+  margin-left: 2ch;
+  list-style: circle;
+}  
+#nav ul a {
+  color: inherit;
+  font-size: 1.5rem;
+}
+
+#about {
+  display: none;
+  padding: 10px 10% 120px 10%;
+}
+#about h {
+  font-weight: 700;
+  line-height: 3ch;
+}
+#about p {
+  padding-left: 1ch;
+}
+#about > * {
+  padding-bottom: 2ch;
+}
+#about b {
+  font-size: .9em;
+  font-weight: 700;
+}
+
+#logo {
+  position: absolute;
+  bottom: 70px;
+  width: 100%;
+  min-width: 50px;
+  height: 3ch;
+  display: inline-block;
+  mask-image: url(logo.svg);
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-image: url(logo.svg);
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  background: #b0c4de;
+}
